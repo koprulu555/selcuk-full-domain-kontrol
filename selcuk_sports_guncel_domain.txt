@@ -1,3 +1,4 @@
 selcuk_guncel_domain=https://www.selcuksportshdc13bdaf295.xyz
 xyzsports_guncel_domain=https://www.xyzsports-eb36c186182b.xyz/
+dizilife_guncel_domain=https://dizi19.life/
 sporcafe_guncel_domain=https://www.sporcafe-21d8675f0ebd.xyz/
