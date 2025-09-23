@@ -39,6 +39,8 @@ def main():
                 domains['selcuk_guncel_domain'] = links[0]['href']
             if len(links) >= 2:
                 domains['xyzsports_guncel_domain'] = links[1]['href']
+            if len(links) >= 3:  # 4. sıradaki domain (index 3)
+                domains['dizilife_guncel_domain'] = links[2]['href']
             if len(links) >= 5:
                 domains['sporcafe_guncel_domain'] = links[4]['href']
         
@@ -56,6 +58,12 @@ def main():
         xyz_matches = re.findall(xyz_pattern, html_text, re.IGNORECASE)
         if xyz_matches and 'xyzsports_guncel_domain' not in domains:
             domains['xyzsports_guncel_domain'] = xyz_matches[0]
+        
+        # Dizilife için regex (dizi19 anahtar kelimesi)
+        dizilife_pattern = r'https?://[^"\']*dizi19[^"\']*'
+        dizilife_matches = re.findall(dizilife_pattern, html_text, re.IGNORECASE)
+        if dizilife_matches and 'dizilife_guncel_domain' not in domains:
+            domains['dizilife_guncel_domain'] = dizilife_matches[0]
         
         # SporCafe için regex
         sporcafe_pattern = r'https?://[^"\']*sporcafe[^"\']*'
